@@ -26,31 +26,31 @@
 
     After line 6:
 
-    ![IMG_0544](/Users/nilariahi/24T2COMP2521/assets/IMG_0544.jpg)
+    ![IMG_0544](../assets/IMG_0544.jpg)
 
     After line 9:
 
-    ![IMG_0545](/Users/nilariahi/24T2COMP2521/assets/IMG_0545.jpg)
+    ![IMG_0545](../assets/IMG_0545.jpg)
 
     After line 11:
 
-    ![IMG_0546](/Users/nilariahi/24T2COMP2521/assets/IMG_0546.jpg)
+    ![IMG_0546](../assets/IMG_0546.jpg)
 
     After line 12:
 
-    ![IMG_0547](/Users/nilariahi/24T2COMP2521/assets/IMG_0547.jpg)
+    ![IMG_0547](../assets/IMG_0547.jpg)
 
     After line 13:
 
-    ![IMG_0548](/Users/nilariahi/24T2COMP2521/assets/IMG_0548.jpg)
+    ![IMG_0548](../assets/IMG_0548.jpg)
 
     After line 15:
 
-    ![IMG_0549](/Users/nilariahi/24T2COMP2521/assets/IMG_0549.jpg)
+    ![IMG_0549](../assets/IMG_0549.jpg)
 
     After line 16:
 
-    ![IMG_0550](/Users/nilariahi/24T2COMP2521/assets/IMG_0550.jpg)
+    ![IMG_0550](../assets/IMG_0550.jpg)
 
 2. Explain why the swap() function here does not work as intended:
 
