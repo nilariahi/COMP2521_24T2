@@ -91,9 +91,9 @@ struct node {
      -   Only one disk can be moved at a time
      -   A larger disk cannot be placed on top of a smaller disk
 
-     ![IMG_0555](/Users/nilariahi/COMP2521_24T2/assets/IMG_0555.jpg)
+     ![IMG_0555](../assets/IMG_0555.jpg)
 
-     ![IMG_0556](/Users/nilariahi/COMP2521_24T2/assets/IMG_0556.jpg)
+     ![IMG_0556](../assets/IMG_0556.jpg)
      
      Write a function that prints out instructions to complete the puzzle. The function should take in the number of disks, and the names of the three rods (A, B and C).
      
@@ -125,9 +125,9 @@ struct node {
      
      Shift everything except for the bottom disk onto the other pole. Then move the bottom disk to the destination pole.
      
-     ![IMG_0557](/Users/nilariahi/COMP2521_24T2/assets/IMG_0557.jpg)
+     ![IMG_0557](../assets/IMG_0557.jpg)
      
      Move all remaining disks from the other pole to the destination pole.
      
-     ![IMG_0558](/Users/nilariahi/COMP2521_24T2/assets/IMG_0558.jpg)
+     ![IMG_0558](../assets/IMG_0558.jpg)
 
