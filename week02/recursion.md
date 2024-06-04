@@ -98,28 +98,28 @@ struct node {
      Write a function that prints out instructions to complete the puzzle. The function should take in the number of disks, and the names of the three rods (A, B and C).
      
      For example, for three disks, the function call `solveHanoi(3, "A", "C", "B")` should print the following:
-     
-    ```
-    Move disk from Rod A to Rod C
-    Move disk from Rod A to Rod B
-    Move disk from Rod C to Rod B
-    Move disk from Rod A to Rod C
-    Move disk from Rod B to Rod A
-    Move disk from Rod B to Rod C
-    Move disk from Rod A to Rod C
-    ```
-    
-    ```c
-    void solveHanoi(int numDisks, char *fromRod, char *toRod, char *otherRod) {
-        if (numDisks == 0) {
-            return;
-        }
-    
-        solveHanoi(numDisks - 1, fromRod, otherRod, toRod);
-        printf("Move disk from Rod %s to Rod %s\n", fromRod, toRod);
-        solveHanoi(numDisks - 1, otherRod, toRod, fromRod);
+
+     ```
+     Move disk from Rod A to Rod C
+     Move disk from Rod A to Rod B
+     Move disk from Rod C to Rod B
+     Move disk from Rod A to Rod C
+     Move disk from Rod B to Rod A
+     Move disk from Rod B to Rod C
+     Move disk from Rod A to Rod C
+     ```
+
+     ```c
+     void solveHanoi(int numDisks, char *fromRod, char *toRod, char *otherRod) {
+         if (numDisks == 0) {
+             return;
+         }
+
+         solveHanoi(numDisks - 1, fromRod, otherRod, toRod);
+         printf("Move disk from Rod %s to Rod %s\n", fromRod, toRod);
+         solveHanoi(numDisks - 1, otherRod, toRod, fromRod);
     }
-    ```
+     ```
     
      Approach:
     
