@@ -118,7 +118,7 @@ struct node {
          solveHanoi(numDisks - 1, fromRod, otherRod, toRod);
          printf("Move disk from Rod %s to Rod %s\n", fromRod, toRod);
          solveHanoi(numDisks - 1, otherRod, toRod, fromRod);
-    }
+     }
      ```
     
      Approach:
