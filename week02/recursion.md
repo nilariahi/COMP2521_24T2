@@ -26,7 +26,7 @@ struct node {
     ```c
     int listCountOdds(struct node *l) {
         if (l == NULL) return 0;
-
+    
         return (l->value % 2) + listCountOdds(l->next);
     }
     ```
@@ -38,7 +38,7 @@ struct node {
         if (l == NULL || l->next == NULL) {
             return true;
         }
-
+    
         // we have at least 2 nodes if we get here
         if (l->next->value < l->value) {
             return false;
@@ -79,7 +79,7 @@ struct node {
     int listLength(struct list *list) {
         return doListLength(list->head);
     }
-
+    
     int doListLength(struct node *n) {
         if (!n) return 0;
         return 1 + doListLength(n->next);
@@ -108,26 +108,26 @@ struct node {
     Move disk from Rod B to Rod C
     Move disk from Rod A to Rod C
     ```
-     
+    
     ```c
     void solveHanoi(int numDisks, char *fromRod, char *toRod, char *otherRod) {
         if (numDisks == 0) {
             return;
         }
-
+    
         solveHanoi(numDisks - 1, fromRod, otherRod, toRod);
         printf("Move disk from Rod %s to Rod %s\n", fromRod, toRod);
         solveHanoi(numDisks - 1, otherRod, toRod, fromRod);
     }
     ```
-     
+    
      Approach:
-     
+    
      Shift everything except for the bottom disk onto the other pole. Then move the bottom disk to the destination pole.
-     
+    
      ![IMG_0557](../assets/IMG_0557.jpg)
-     
+    
      Move all remaining disks from the other pole to the destination pole.
-     
+    
      ![IMG_0558](../assets/IMG_0558.jpg)
 
