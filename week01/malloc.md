@@ -8,11 +8,11 @@
 
     ```c
     int main(void) {
-    	stackInt();
+        stackInt();
     }
     
     void stackInt(void) {
-    	int a = 5;
+        int a = 5;
     }
     ```
 
@@ -20,12 +20,12 @@
 
     ```c
     int main(void) {
-    	heapInt();
+        heapInt();
     }
     
     void heapInt(void) {
-    	int *a = malloc(sizeof(int));
-    	*a = 5;
+        int *a = malloc(sizeof(int));
+        *a = 5;
     }
     ```
 
@@ -35,14 +35,14 @@
 
     ```c
     struct node {
-    	int value;
-    	struct node *next;
+        int value;
+        struct node *next;
     };
     
     int main(void) {
-    	struct node n;
-    	n.value = 42;
-    	n.next = NULL;
+        struct node n;
+        n.value = 42;
+        n.next = NULL;
     }
     ```
 
@@ -50,14 +50,14 @@
 
     ```c
     struct node {
-    	int value;
-    	struct node *next;
+        int value;
+        struct node *next;
     };
     
     int main(void) {
-    	struct node *n = malloc(sizeof(struct node));
-    	n->value = 42;
-    	n->next = NULL;
+        struct node *n = malloc(sizeof(struct node));
+        n->value = 42;
+        n->next = NULL;
     }
     ```
 
@@ -65,10 +65,10 @@
 
     ```c
     int main(void) {
-    	int a[5];
-    	for (int i = 0; i < 5; i++) {
-    		a[i] = 42;
-    	}
+        int a[5];
+        for (int i = 0; i < 5; i++) {
+            a[i] = 42;
+        }
     }
     ```
 
@@ -76,10 +76,10 @@
 
     ```c
     int main(void) {
-    	int *a = malloc(sizeof(int) * 5);
-    	for (int i = 0; i < 5; i++) {
-    		a[i] = 42;
-    	}
+        int *a = malloc(sizeof(int) * 5);
+        for (int i = 0; i < 5; i++) {
+            a[i] = 42;
+        }
     }
     ```
 

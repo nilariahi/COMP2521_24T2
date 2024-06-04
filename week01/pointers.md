@@ -4,21 +4,21 @@
 
     ```c
     int main(void) {
-    	int a = 5;
-    	int b = 123;
+        int a = 5;
+        int b = 123;
     
-    	int *pa = &a;
-    	int *pb = &b;
+        int *pa = &a;
+        int *pb = &b;
     
-    	*pa = 6;
-    	*pb = 234;
+        *pa = 6;
+        *pb = 234;
     
-    	int c = *pa;
-    	*pa = *pb;
-    	*pb = c;
+        int c = *pa;
+        *pa = *pb;
+        *pb = c;
     
-    	pa = pb;
-    	*pa = 345;
+        pa = pb;
+        *pa = 345;
     }
     ```
 
@@ -56,16 +56,16 @@
 
     ```c
     int main(void) {
-    	int a = 5;
-    	int b = 7;
-    	swap(a, b);
-    	printf("a = %d, b = %d\n", a, b);
+        int a = 5;
+        int b = 7;
+        swap(a, b);
+        printf("a = %d, b = %d\n", a, b);
     }
     
     void swap(int a, int b) {
-    	int tmp = a;
-    	a = b;
-    	b = tmp;
+        int tmp = a;
+        a = b;
+        b = tmp;
     }
     ```
 
@@ -77,16 +77,16 @@
     
     ```c
     int main(void) {
-    	int a = 5;
-    	int b = 7;
-    	swap(&a, &b);
-    	printf("a = %d, b = %d\n", a, b);
+        int a = 5;
+        int b = 7;
+        swap(&a, &b);
+        printf("a = %d, b = %d\n", a, b);
     }
     
     void swap(int *a, int *b) {
-    	int tmp = *a;
-    	*a = *b;
-    	*b = tmp;
+        int tmp = *a;
+        *a = *b;
+        *b = tmp;
     }
     ```
     

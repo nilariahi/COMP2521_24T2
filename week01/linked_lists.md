@@ -57,8 +57,8 @@
 
     ```c
     struct node {
-    	int value;
-    	struct node *next;
+        int value;
+        struct node *next;
     };
     ```
 
@@ -111,22 +111,6 @@
             prev = curr;
         }
         
-        return list;
-    }
-    
-    // bonus: recursive version of listDelete
-    // don't worry if you don't understand it yet
-    // we'll be doing lots of recursion later
-    struct node *listDeleteRec(struct node *list, int value) {
-        if (!list) return NULL;
-        
-        if (list->value == value) {
-            struct node *rest = list->next;
-            free(list);
-            return rest;
-        }
-        
-        list->next = listDeleteRec(list->next, value);
         return list;
     }
     ```
