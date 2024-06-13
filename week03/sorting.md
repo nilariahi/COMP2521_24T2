@@ -52,40 +52,40 @@
 
     ```c
     void mergeSort(int A[], int lo, int hi) {
-    	if (lo >= hi) return;
-    	
-    	int mid = (lo + hi) / 2;
-    	mergeSort(A, lo, mid);
-    	mergeSort(A, mid + 1, hi);
-    	merge(A, lo, mid, hi);
+        if (lo >= hi) return;
+        
+        int mid = (lo + hi) / 2;
+        mergeSort(A, lo, mid);
+        mergeSort(A, mid + 1, hi);
+        merge(A, lo, mid, hi);
     }
     
     void merge(int A[], int lo, int mid, int hi) {
-    	int nitems = hi - lo + 1;
-    	int *tmp = malloc(nitems * sizeof(int));
-    	
-    	int i = lo;
-    	int j = mid + 1;
-    	int k = 0;
-    	
-    	// scan both segments into tmp
-    	while (i <= mid && j <= hi) {
-    		if (A[i] <= A[j]) {
-    			tmp[k++] = A[i++];
-    		} else {
-    			tmp[k++] = A[j++];
-    		}
-    	}
-    	
-    	// copy items from unfinished segment
-    	while (i <= mid) tmp[k++] = A[i++];
-    	while (j <= hi)  tmp[k++] = A[j++];
-    	
-    	// copy items from tmp back to main array
-    	for (i = lo, k = 0; i <= hi; i++, k++) {
-    		A[i] = tmp[k];
-    	}
-    	free(tmp);
+        int nitems = hi - lo + 1;
+        int *tmp = malloc(nitems * sizeof(int));
+        
+        int i = lo;
+        int j = mid + 1;
+        int k = 0;
+        
+        // scan both segments into tmp
+        while (i <= mid && j <= hi) {
+            if (A[i] <= A[j]) {
+                tmp[k++] = A[i++];
+            } else {
+                tmp[k++] = A[j++];
+            }
+        }
+        
+        // copy items from unfinished segment
+        while (i <= mid) tmp[k++] = A[i++];
+        while (j <= hi)  tmp[k++] = A[j++];
+        
+        // copy items from tmp back to main array
+        for (i = lo, k = 0; i <= hi; i++, k++) {
+            A[i] = tmp[k];
+        }
+        free(tmp);
     }
     ```
 
@@ -103,7 +103,7 @@
     merge(A, 0, 4, 9):
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
              ^              ^       
-             i			    j
+             i              j
      tmp = { _, _, _, _, _, _, _, _, _, _ }
              ^
              k
@@ -114,7 +114,7 @@
     `````c
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                 ^           ^       
-                i			j
+                i           j
      tmp = { 1, _, _, _, _, _, _, _, _, _ }
                 ^
                 k
@@ -125,7 +125,7 @@
     ```c
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                 ^              ^       
-                i			   j
+                i              j
      tmp = { 1, 2, _, _, _, _, _, _, _, _ }
                    ^
                    k
@@ -136,7 +136,7 @@
     ```c
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                 ^                 ^       
-                i			      j
+                i                 j
      tmp = { 1, 2, 3, _, _, _, _, _, _, _ }
                       ^
                       k
@@ -145,7 +145,7 @@
     ```c
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                    ^              ^       
-                   i			  j
+                   i              j
      tmp = { 1, 2, 3, 4, _, _, _, _, _, _ }
                          ^
                          k
@@ -154,7 +154,7 @@
     ```c
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                    ^                 ^       
-                   i			     j
+                   i                 j
      tmp = { 1, 2, 3, 4, 4, _, _, _, _, _ }
                             ^
                             k
@@ -163,7 +163,7 @@
     ```c
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                       ^              ^       
-                      i			     j
+                      i              j
      tmp = { 1, 2, 3, 4, 4, 5, _, _, _, _ }
                                ^
                                k
@@ -172,7 +172,7 @@
     ```c
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                          ^           ^       
-                         i			 j
+                         i           j
      tmp = { 1, 2, 3, 4, 4, 5, 6, _, _, _ }
                                   ^
                                   k
@@ -181,7 +181,7 @@
     ```c
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                             ^        ^       
-                            i	     j
+                            i        j
      tmp = { 1, 2, 3, 4, 4, 5, 6, 7, _, _ }
                                      ^
                                      k
@@ -192,7 +192,7 @@
     ```c
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                             ^              ^       
-                            i	           j
+                            i              j
      tmp = { 1, 2, 3, 4, 4, 5, 6, 7, 7, 9 }
                                            ^
                                            k
@@ -206,20 +206,20 @@
 
     ```c
     int partition(int A[], int lo, int hi) {
-    	int pivot = A[lo];
+        int pivot = A[lo];
     
-    	int l = lo + 1;
-    	int r = hi;
-    	while (true) {
-    		while (l < r && A[l] <= pivot) l++;
-    		while (l < r && A[r] >= pivot) r--;
-    		if (l == r) break;
-    		swap(A, l, r);
-    	}
+        int l = lo + 1;
+        int r = hi;
+        while (true) {
+            while (l < r && A[l] <= pivot) l++;
+            while (l < r && A[r] >= pivot) r--;
+            if (l == r) break;
+            swap(A, l, r);
+        }
     
-    	if (pivot < A[l]) l--;
-    	swap(A, lo, l);
-    	return l;
+        if (pivot < A[l]) l--;
+        swap(A, lo, l);
+        return l;
     }
     ```
 
@@ -246,20 +246,20 @@
     ```c
     void shellSort(int a[], int lo, int hi)
     {
-    	int h;
-    	for (h = 1; h <= (hi - lo) / 9; h = 3 * h + 1);
+        int h;
+        for (h = 1; h <= (hi - lo) / 9; h = 3 * h + 1);
     
-    	for (; h > 0; h /= 3) {
-    		for (int i = lo + h; i <= hi; i++) {
-    			int val = a[i];
-    			int j = i;
-    			while (j >= lo + h && val < a[j - h]) {
-    				a[j] = a[j - h];
-    				j -= h;
-    			}
-    			a[j] = val;
-    		}
-    	}
+        for (; h > 0; h /= 3) {
+            for (int i = lo + h; i <= hi; i++) {
+                int val = a[i];
+                int j = i;
+                while (j >= lo + h && val < a[j - h]) {
+                    a[j] = a[j - h];
+                    j -= h;
+                }
+                a[j] = val;
+            }
+        }
     }
     ```
 
