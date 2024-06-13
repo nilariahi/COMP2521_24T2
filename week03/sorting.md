@@ -49,7 +49,6 @@
         -   Left as an exercise to the reader :) (will be updated after the week 3 lab though).
 
 3.  Merge sort is typically implemented as follows:
-
     ```c
     void mergeSort(int A[], int lo, int hi) {
         if (lo >= hi) return;
@@ -91,7 +90,7 @@
 
     Suppose that at a particular point during the execution of the `mergeSort` function, the array `A` looks like this:
 
-    ```c
+    ```
     { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
     ```
 
@@ -99,7 +98,7 @@
 
     Setup before the loop:
 
-    ```c
+    ```
     merge(A, 0, 4, 9):
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
              ^              ^       
@@ -111,18 +110,18 @@
 
     After first iteration of the loop:
 
-    `````c
+    ```
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                 ^           ^       
                 i           j
      tmp = { 1, _, _, _, _, _, _, _, _, _ }
                 ^
                 k
-    `````
+    ```
 
     After the second iteration:
 
-    ```c
+    ```
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                 ^              ^       
                 i              j
@@ -133,7 +132,7 @@
 
     and so on...
 
-    ```c
+    ```
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                 ^                 ^       
                 i                 j
@@ -142,7 +141,7 @@
                       k
     ```
 
-    ```c
+    ```
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                    ^              ^       
                    i              j
@@ -151,7 +150,7 @@
                          k
     ```
 
-    ```c
+    ```
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                    ^                 ^       
                    i                 j
@@ -160,7 +159,7 @@
                             k
     ```
 
-    ```c
+    ```
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                       ^              ^       
                       i              j
@@ -169,7 +168,7 @@
                                k
     ```
 
-    ```c
+    ```
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                          ^           ^       
                          i           j
@@ -178,7 +177,7 @@
                                   k
     ```
 
-    ```c
+    ```
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                             ^        ^       
                             i        j
@@ -189,7 +188,7 @@
 
     The main loop ends now since $i > mid$. We then copy over the leftover elements from $j$ to $hi$.
 
-    ```c
+    ```
        A = { 1, 4, 5, 6, 7, 2, 3, 4, 7, 9 }
                             ^              ^       
                             i              j
@@ -200,7 +199,7 @@
 
     Then copy everything from $tmp$ into $A$ and return. So the final state of $A$ looks like `{ 1, 2, 3, 4, 4, 5, 6, 7, 7, 9 }`.
 
-4.  An important operation in the quicksort algorithm is partition, which takes an element called the pivot, and reorganises the elements in the subarray `A[lo..hi]` such that all elements to the left of the pivot in the subarray are less than or equal to the pivot, and all elements to the right of the pivot in the subarray are greater than the pivot.
+5.  An important operation in the quicksort algorithm is partition, which takes an element called the pivot, and reorganises the elements in the subarray `A[lo..hi]` such that all elements to the left of the pivot in the subarray are less than or equal to the pivot, and all elements to the right of the pivot in the subarray are greater than the pivot.
 
     Here is one possible implementation of partition:
 
@@ -227,21 +226,21 @@
 
     1.  `{ 5, 3, 9, 6, 4, 2, 9, 8, 1, 7 }`
 
-        ```c
+        ```
         A after partition = { 4, 3, 1, 2, 5, 6, 9, 8, 9, 7 } returns index 4
         ```
     2.  `{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }`
 
-        ```c
+        ```
         A after partition = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 } returns index 0
         ```
     3.  `{ 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 }`
 
-        ```c
+        ```
         A after partition = { 0, 8, 7, 6, 5, 4, 3, 2, 1, 9 } returns index 9
         ```
 
-5.  Consider the following shell sort algorithm (based on Sedgewick's implementation):
+6.  Consider the following shell sort algorithm (based on Sedgewick's implementation):
 
     ```c
     void shellSort(int a[], int lo, int hi)
@@ -273,9 +272,9 @@
         *   In the second iteration, insertion sort is performed on subsets of the array made up of every 4th elements. E.g. one subset will be indices $\set{0, 4, 8, 12, ...}$, another subset is $\set{1, 5, 9, 13, ...}$​, and so on.
         *   In the final iteration, normal insertion sort is performed on the entire subarray. We can expect fewer moves here than in normal insertion sort because the sortedness of the array would've been improved through the previous 2 passes.
 
-6.  Show how radix sort would sort the following array of strings:
+7.  Show how radix sort would sort the following array of strings:
 
-    ```c
+    ```
     [0] set
     [1] how
     [2] cup
@@ -288,7 +287,7 @@
 
     After (stable) sorting by the third character:
 
-    ```c
+    ```
     [0] hob
     [1] cob
     [2] cup
@@ -301,7 +300,7 @@
 
     Then by the second character:
 
-    ```c
+    ```
     [0] hat
     [1] paw
     [2] set
@@ -314,7 +313,7 @@
 
     And finally by the first character:
 
-    ```c
+    ```
     [0] cob
     [1] cup
     [2] hat
