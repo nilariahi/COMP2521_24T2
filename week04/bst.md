@@ -29,26 +29,38 @@ struct node {
 
     Are there any kinds of trees for which all output orders will be the same?
 
-3.  Implement the following function that counts the number of odd values in a tree. Use the following function interface:
+3.  Write a recursive function to count the total number of nodes in a tree. Use the following function interface:
 
     ```c
-    int bstCountOdds(struct node *t) { ... }
+    int bstNumNodes(struct node *t) {}
     ```
 
-4.  Implement the following function to count number of internal nodes in a given tree. An internal node is a node with at least one child node. Use the following function interface:
+4.  Implement the following function that counts the number of odd values in a tree. Use the following function interface:
 
     ```c
-    int bstCountInternal(struct node *t) { ... }
+    int bstCountOdds(struct node *t) {}
     ```
 
-5.  Implement the following function that returns the level of the node containing a given key if such a node exists, otherwise the function returns -1 (when a given key is not in the binary search tree). The level of the root node is zero. Use the following function interface:
+5.  Implement the following function to count number of internal nodes in a given tree. An internal node is a node with at least one child node. Use the following function interface:
 
     ```c
-    int bstNodeLevel(struct node *t, int key) { ... }
+    int bstCountInternal(struct node *t) {}
     ```
 
-6.  Implement the following function that counts the number of values that are greater than a given value. This function should avoid visiting nodes that it doesn't have to visit. Use the following function interface:
+6.  Write a recursive function to compute the height of a tree. The *height* of a tree is defined as the length of the longest path from the root to a leaf. The *path length* is a count of the number of *links* (edges) on the path. The height of an empty tree is -1. Use the following function interface:
 
     ```c
-    int bstCountGreater(struct node *t, int val) { ... }
+    int bstHeight(struct node *t) {}
+    ```
+
+7.  Implement the following function that returns the level of the node containing a given key if such a node exists, otherwise the function returns -1 (when a given key is not in the binary search tree). The level of the root node is zero. Use the following function interface:
+
+    ```c
+    int bstNodeLevel(struct node *t, int key) {}
+    ```
+
+8.  Implement the following function that counts the number of values that are greater than a given value. This function should avoid visiting nodes that it doesn't have to visit. Use the following function interface:
+
+    ```c
+    int bstCountGreater(struct node *t, int val) {}
     ```
