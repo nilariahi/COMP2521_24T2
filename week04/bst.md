@@ -23,7 +23,7 @@ struct node {
 
 2.  Consider the following tree and its values displayed in different output orderings:
 
-    ![img](https://cgi.cse.unsw.edu.au/~cs2521/24T1/tut/4/bst-traversals/bst-traversals.svg)
+    ![img](https://cgi.cse.unsw.edu.au/~cs2521/24T2/tut/4/bst-traversals/bst-traversals.svg)
 
     What kind of trees have the property that their in-order traversal is the same as their pre-order traversal?
 
