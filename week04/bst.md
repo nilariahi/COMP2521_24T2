@@ -1,0 +1,54 @@
+##### Binary Search Trees
+
+For the questions below, use the following data type:
+
+```c
+struct node {
+	int value;
+	struct node *left;
+	struct node *right;
+};
+```
+
+1.  For each of the sequences below
+
+    -   start from an initially empty binary search tree
+    -   show the tree resulting from inserting values in the order given
+
+    1.  4 6 5 2 1 3 7
+    2.  5 2 3 4 6 1 7
+    3.  7 6 5 4 3 2 1
+
+    Assume new values are always inserted as new leaf nodes.
+
+2.  Consider the following tree and its values displayed in different output orderings:
+
+    ![img](https://cgi.cse.unsw.edu.au/~cs2521/24T1/tut/4/bst-traversals/bst-traversals.svg)
+
+    What kind of trees have the property that their in-order traversal is the same as their pre-order traversal?
+
+    Are there any kinds of trees for which all output orders will be the same?
+
+3.  Implement the following function that counts the number of odd values in a tree. Use the following function interface:
+
+    ```c
+    int bstCountOdds(struct node *t) { ... }
+    ```
+
+4.  Implement the following function to count number of internal nodes in a given tree. An internal node is a node with at least one child node. Use the following function interface:
+
+    ```c
+    int bstCountInternal(struct node *t) { ... }
+    ```
+
+5.  Implement the following function that returns the level of the node containing a given key if such a node exists, otherwise the function returns -1 (when a given key is not in the binary search tree). The level of the root node is zero. Use the following function interface:
+
+    ```c
+    int bstNodeLevel(struct node *t, int key) { ... }
+    ```
+
+6.  Implement the following function that counts the number of values that are greater than a given value. This function should avoid visiting nodes that it doesn't have to visit. Use the following function interface:
+
+    ```c
+    int bstCountGreater(struct node *t, int val) { ... }
+    ```
