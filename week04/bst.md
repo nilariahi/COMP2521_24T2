@@ -4,9 +4,9 @@ For the questions below, use the following data type:
 
 ```c
 struct node {
-	int value;
-	struct node *left;
-	struct node *right;
+    int value;
+    struct node *left;
+    struct node *right;
 };
 ```
 

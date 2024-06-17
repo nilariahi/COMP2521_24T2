@@ -23,26 +23,26 @@
     #include "Stack.h"
     
     struct queue {
-    	Stack s1;
-    	Stack s2;
+        Stack s1;
+        Stack s2;
     };
     
     Queue QueueNew(void) {
-    	Queue q = malloc(sizeof(struct queue));
-    	q->s1 = StackNew();
-    	q->s2 = StackNew();
-    	return q;
+        Queue q = malloc(sizeof(struct queue));
+        q->s1 = StackNew();
+        q->s2 = StackNew();
+        return q;
     }
     
     // O(1)
     void QueueEnqueue(Queue q, int item) {
-    	StackPush(q->s1, item);
+        StackPush(q->s1, item);
     }
     
     // O(n)
     int QueueDequeue(Queue q) {
         if (StackSize(q->s2) == 0) {
-         	while (StackSize(q->s1) > 0) {
+            while (StackSize(q->s1) > 0) {
                 int it = StackPop(q->s1);
                 StackPush(q->s2, it);
             } 
