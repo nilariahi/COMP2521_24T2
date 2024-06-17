@@ -3,17 +3,17 @@
 1.  A classic problem in computer science is the problem of implementing a queue using two stacks. Consider the following stack ADT interface:
 
     ```c
-    // Creates a new empty stack
+    // Creates a new empty stack O(1)
     Stack StackNew(void);
     
-    // Pushes an item onto the stack
+    // Pushes an item onto the stack O(1)
     void StackPush(Stack s, int item);
     
-    // Pops an item from the stack and returns it
+    // Pops an item from the stack and returns it O(1)
     // Assumes that the stack is not empty
     int StackPop(Stack s);
     
-    // Returns the number of items on the stack
+    // Returns the number of items on the stack O(1)
     int StackSize(Stack s);
     ```
 
@@ -34,11 +34,20 @@
     	return q;
     }
     
+    // O(1)
     void QueueEnqueue(Queue q, int item) {
-    	// TODO
+    	StackPush(q->s1, item);
     }
     
+    // O(n)
     int QueueDequeue(Queue q) {
-    	// TODO
+        if (StackSize(q->s2) == 0) {
+         	while (StackSize(q->s1) > 0) {
+                int it = StackPop(q->s1);
+                StackPush(q->s2, it);
+            } 
+        }
+    
+        return StackPop(q->s2);
     }
     ```
