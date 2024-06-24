@@ -58,11 +58,11 @@ struct node {
          Output: true if A has two distinct elements that sum to v, false otherwise
          
          twoSum(A, v):
-         	t = new AVL tree
-         	
-         	for i from 0 to n - 1 do
-         		if t contains (v - A[i]) then
-         			return true
+            t = new AVL tree
+            
+            for i from 0 to n - 1 do
+                if t contains (v - A[i]) then
+                    return true
                  insert A[i] into t
              
              return false
